@@ -1,0 +1,18 @@
+---
+# tasks file for ./roles/mariadb
+# ansible_ens160ではエラーがでたので、ansible_eth1に変更している（https://go-journey.club/archives/4893）
+
+- name: configure / Setup configure file
+  template:
+    src: server.cnf.j2
+    dest: /etc/my.cnf.d/server.cnf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+
+- name: configure / Stop all MariaDB for initialization
+  systemd:
+    name: mariadb
+    state: restarted
+    enabled: yes

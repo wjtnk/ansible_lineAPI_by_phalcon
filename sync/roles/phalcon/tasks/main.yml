@@ -1,0 +1,5 @@
+---
+# tasks file for ./roles/php-fpm
+
+- include_tasks: roles/phalcon/tasks/install.yml
+- include_tasks: roles/phalcon/tasks/configure.yml

@@ -1,0 +1,13 @@
+---
+# vars file for ./roles/php-fpm
+
+phpfpm_user: nginx
+phpfpm_group: nginx
+phpfpm_unix_socket: /run/php-fpm/php-fpm.sock
+php_packages:
+  - php
+  - php-mbstring
+  - php-mcrypt
+  - php-mysqlnd
+  - php-pdo
+  - php-fpm

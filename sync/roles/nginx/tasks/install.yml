@@ -1,0 +1,8 @@
+---
+# tasks file for ./roles/nginx
+
+- name: install / Install required packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ nginx_packages }}"

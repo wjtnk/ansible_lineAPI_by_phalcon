@@ -1,0 +1,49 @@
+---
+# tasks file for ./roles/php-fpm
+
+- name: install / Install required packages
+  yum:
+    name: git
+    state: present
+
+- name: install / Download phalcon-devtools
+  git:
+    repo: https://github.com/phalcon/phalcon-devtools.git
+    dest: /var/www/phalcon-devtools
+
+- name: install / SetUp phalcon-devtools
+  command : cd /var/www/phalcon-devtools && . ./phalcon.sh
+
+- name: install / link
+  command : sudo ln -s -f /var/www/phalcon-devtools/phalcon.php /usr/bin/phalcon
+
+- name: install / change Authority
+  command : chmod ugo+x /usr/bin/phalcon
+
+# #result.statとして/var/www/myappのディレクトリを登録
+# - name: check
+#   stat: path=/var/www/myapp
+#   register: result
+
+# #result.stat(/var/www/myapp)がない時だけ作成
+# - name: install / create app
+#   shell : cd /var/www && sudo phalcon project myapp simple
+#   when: not result.stat.exists
+
+
+- name: install / Download lineApi
+  git:
+    repo: https://github.com/wjtnk/line_api.git
+    dest: /var/www/lineapi
+
+- name: configure / reStart nginx service
+  systemd:
+    name: nginx
+    state: reloaded
+    enabled: yes
+
+- name: configure / reStart php-fpm service
+  systemd:
+    name: php-fpm
+    state: reloaded
+    enabled: yes

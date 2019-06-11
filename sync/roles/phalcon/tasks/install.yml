@@ -1,0 +1,20 @@
+---
+# tasks file for ./roles/php-fpm
+
+- name: install / Install phalcon
+  yum:
+    name: php-phalcon3
+    state: present
+    enablerepo: remi-php72
+
+# - name: configure / Start nginx service
+#   systemd:
+#     name: 'nginx'
+#     state: restarted
+#     enabled: yes
+
+# - name: configure / Start php-fpm service
+#   systemd:
+#     name: 'php-fpm'
+#     state: restarted
+#     enabled: yes

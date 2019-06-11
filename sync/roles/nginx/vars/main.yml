@@ -1,0 +1,10 @@
+---
+# vars file for ./roles/nginx
+
+nginx_service_port: 80
+nginx_firewalld_port:
+  - "{{ nginx_service_port }}/tcp"
+doc_root: "/var/www/lineapi/public"
+nginx_packages:
+  - nginx
+  - MySQL-python

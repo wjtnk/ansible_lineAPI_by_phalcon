@@ -1,0 +1,16 @@
+---
+# vars file for ./roles/mariadb
+
+mariadb_service_port: 3306
+
+mariadb_release: 10.2.11
+mariadb_root_pass:
+
+mariadb_firewalld_port:
+  - "{{ mariadb_service_port }}/tcp"
+
+mariadb_packages:
+  - MariaDB-server
+  - MariaDB-client
+  - rsync
+  - MySQL-python
