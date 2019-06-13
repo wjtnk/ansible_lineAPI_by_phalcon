@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/lineapi":{"guestpath":"/var/www/lineapi","hostpath":"/Users/r.sugikawa/Desktop/ansible_lineAPI_by_phalcon/lineapi","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/r.sugikawa/Desktop/ansible_lineAPI_by_phalcon","disabled":false,"__vagrantfile":true}}}

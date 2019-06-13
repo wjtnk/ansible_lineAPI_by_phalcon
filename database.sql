@@ -1,8 +1,8 @@
-CREATE USER root@192.168.10.21 IDENTIFIED BY "passwd";
-SELECT User,Host FROM mysql.user;
-GRANT ALL ON testdb.* TO root@192.168.10.21;
-CREATE DATABASE testdb;
-use testdb;
+-- CREATE USER testuser@192.168.10.21 IDENTIFIED BY "testpasswd";
+-- SELECT User,Host FROM mysql.user;
+-- GRANT ALL ON testdb.* TO testuser@192.168.10.21;
+-- CREATE DATABASE testdb;
+-- use testdb;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (

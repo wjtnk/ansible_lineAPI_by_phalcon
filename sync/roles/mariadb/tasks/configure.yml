@@ -16,3 +16,18 @@
     name: mariadb
     state: restarted
     enabled: yes
+
+#ユーザー作成
+- name: Create database user with password and all database privileges and 'WITH GRANT OPTION'
+  mysql_user:
+    name: testuser
+    password: testpasswd
+    priv: '*.*:ALL,GRANT'
+    state: present
+    host: 192.168.10.21
+
+#Database作成
+- name: Create a new database
+  mysql_db:
+    name: testdb
+    state: present

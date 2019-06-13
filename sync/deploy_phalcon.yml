@@ -1,4 +1,13 @@
 ---
+
+- name: Deploy Database for phalcon
+  hosts: host
+  become: true
+  vars:
+    ansible_sudo_pass: 'vagrant'
+  roles:
+    - { role: common, tags: common }
+
 - name: Deploy Database for phalcon
   hosts: databases
   become: true
