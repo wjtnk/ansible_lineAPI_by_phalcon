@@ -1,9 +1,10 @@
 -- CREATE USER testuser@192.168.10.21 IDENTIFIED BY "testpasswd";
 -- SELECT User,Host FROM mysql.user;
 -- GRANT ALL ON testdb.* TO testuser@192.168.10.21;
+-- mysql -u root
 -- CREATE DATABASE testdb;
--- use testdb;
 
+use testdb;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,

@@ -1,5 +1,16 @@
+#<hostでkeyの作成>
+#$ssh-keygen -t rsa
+#$ssh-copy-id localhost
+#$ssh-copy-id 192.168.10.21
+#$ssh-copy-id 192.168.10.31
 
 # ansible-playbook -i ./inventory/inventory.ini deploy_phalcon.yml -t common
+
+#<dbサーバーでdatabaseの作成>
+#mysql -u rootで中に入り、database sqlの中身を実行
+
+#<appサーバでセッションの書き込み、読み込み権限を与える>
+#sudo chmod 777 /var/lib/php/session
 
 Vagrant.configure("2") do |config|
 
